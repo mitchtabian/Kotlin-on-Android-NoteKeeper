@@ -24,7 +24,8 @@ class SettingsActivity: PreferenceActivity()
 
     class TabletSettingsFragment : PreferenceFragment()
     {
-
+		val TAG = "TabletSettingsFragment"
+		
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
 
@@ -38,6 +39,23 @@ class SettingsActivity: PreferenceActivity()
             else if(settings.equals(getString(R.string.preferences_about))){
                 addPreferencesFromResource(R.xml.preference_about)
             }
+        }
+		
+		fun updatePreferenceSuccess(key: String?){
+
+            // If this was a real application we would send the updates to server here
+            uploadPreferencesToServer()
+
+            printToLog("successfully updated preferences. key: " + key)
+
+        }
+
+        private fun uploadPreferencesToServer(){
+            // Code for uploading updated preferences to server
+        }
+
+        private fun printToLog(message: String?){
+            Log.d(TAG, message)
         }
     }
 }
