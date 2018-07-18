@@ -21,6 +21,24 @@ class SettingsActivity: PreferenceActivity()
         loadHeadersFromResource(R.xml.preference_headers, target)
     }
     
+	class TabletSettingsFragment : PreferenceFragment()
+    {
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+
+            val settings = arguments.getString("settings")
+            if(settings.equals(getString(R.string.preferences_notifications))){
+                addPreferencesFromResource(R.xml.preference_notifications)
+            }
+            else if(settings.equals(getString(R.string.preferences_sync))){
+                addPreferencesFromResource(R.xml.preference_sync)
+            }
+            else if(settings.equals(getString(R.string.preferences_about))){
+                addPreferencesFromResource(R.xml.preference_about)
+            }
+        }
+    }
 }
 
 
