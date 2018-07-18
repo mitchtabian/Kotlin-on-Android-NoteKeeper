@@ -98,11 +98,16 @@ class ItemsActivity : AppCompatActivity(),
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-                inflateSettingsFragment()
+                navSettingsActivity()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun navSettingsActivity(){
+        val activityIntent = Intent(this, SettingsActivity::class.java)
+        startActivity(activityIntent)
     }
 
     fun inflateSettingsFragment(){
