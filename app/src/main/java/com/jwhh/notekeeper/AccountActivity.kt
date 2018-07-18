@@ -97,6 +97,7 @@ class AccountActivity : AppCompatActivity(),
         // Gender
         printToLog("saving gender: " + gender_spinner.selectedItem.toString())
         editor.putString(PREFERENCES_GENDER, gender_spinner.selectedItem.toString())
+		editor.apply()
     }
 
 
