@@ -53,7 +53,50 @@ class AccountActivity : AppCompatActivity(),
     }
 
     fun savePreferences(){
+        currentFocus.rootView.hideKeyboard()
 
+        val prefs: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val editor: SharedPreferences.Editor = prefs.edit()
+
+        // Name
+        if(!input_name.text.toString().equals("")){
+            val name: String? = input_name.text.toString()
+            printToLog("saving name: ${name}")
+            editor.putString(PREFERENCES_NAME, name)
+            editor.apply()
+
+        }
+
+        // Username
+        if(!input_username.text.toString().equals("")){
+            val username: String? = input_username.text.toString()
+            printToLog("saving username: ${username}")
+            editor.putString(PREFERENCES_USERNAME, username)
+            editor.apply()
+
+        }
+
+        // Email
+        if(!input_email_address.text.toString().equals("")){
+            val email: String? = input_email_address.text.toString()
+            printToLog("saving username: ${email}")
+            editor.putString(PREFERENCES_EMAIL, email)
+            editor.apply()
+
+        }
+
+        // Phone
+        if(!input_phone_number.text.toString().equals("")){
+            val phoneNumber: String? = input_phone_number.text.toString()
+            printToLog("saving phone number: ${phoneNumber}")
+            editor.putString(PREFERENCES_PHONE_NUMBER, phoneNumber)
+            editor.apply()
+
+        }
+
+        // Gender
+        printToLog("saving gender: " + gender_spinner.selectedItem.toString())
+        editor.putString(PREFERENCES_GENDER, gender_spinner.selectedItem.toString())
     }
 
 
@@ -62,7 +105,7 @@ class AccountActivity : AppCompatActivity(),
 
             R.id.close -> finish()
 
-            
+            R.id.save -> savePreferences()
         }
 
     }
