@@ -11,23 +11,17 @@ import android.provider.Settings
 class SettingsActivity: PreferenceActivity()
 {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-//        addPreferencesFromResource(R.xml.pref_main)
-    }
-
     override fun onBuildHeaders(target: MutableList<Header>?) {
         loadHeadersFromResource(R.xml.preference_headers, target)
     }
 
-	override fun isValidFragment(fragmentName: String?): Boolean {
+    override fun isValidFragment(fragmentName: String?): Boolean {
         if(TabletSettingsFragment::class.java.name.equals(fragmentName)){
             return true
         }
         return false
     }
-    
+
     class TabletSettingsFragment : PreferenceFragment()
     {
 
