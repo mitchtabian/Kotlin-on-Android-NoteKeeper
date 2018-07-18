@@ -137,6 +137,15 @@ class AccountActivity : AppCompatActivity(),
         save.setOnClickListener(this)
     }
 
+	override fun onResume() {
+        super.onResume()
+        PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        PreferenceManager.getDefaultSharedPreferences(this).unregisterOnSharedPreferenceChangeListener(this)
+    }
 }
 
 
