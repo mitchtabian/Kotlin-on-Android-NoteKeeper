@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditTextPreference
+        android:defaultValue="@string/default_storage"
+        android:key="@string/key_gallery_name"
+        android:summary="@string/default_storage"
+        android:title="@string/title_gallery_storage"/>
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="@string/key_upload_over_wifi"
+        android:summary="@string/summary_upload_over_wifi"
+        android:title="@string/title_auto_upload"/>
+
+    <ListPreference
+        android:defaultValue="1"
+        android:dialogTitle="@string/title_backup_frequency"
+        android:entries="@array/pref_backup_frequency_entries"
+        android:entryValues="@array/pref_backup_frequency_values"
+        android:key="@string/key_backup_frequency"
+        android:summary="@string/summary_backup_frequency"
+        android:title="@string/title_backup_frequency" />
+
+</PreferenceScreen>

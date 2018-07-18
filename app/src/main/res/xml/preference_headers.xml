@@ -2,13 +2,15 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header
+        android:fragment="com.jwhh.notekeeper.SettingsActivity$TabletSettingsFragment"
         android:title="Notifications"
         android:summary="Notification Settings">
-		<!-- key/value pairs can be included as arguments for the fragment. -->
+        <!-- key/value pairs can be included as arguments for the fragment. -->
         <extra android:name="settings" android:value="Notifications" />
     </header>
 
     <header
+        android:fragment="com.jwhh.notekeeper.SettingsActivity$TabletSettingsFragment"
         android:title="Sync"
         android:summary="Sync Settings">
         <!-- key/value pairs can be included as arguments for the fragment. -->
@@ -16,6 +18,7 @@
     </header>
 
     <header
+        android:fragment="com.jwhh.notekeeper.SettingsActivity$TabletSettingsFragment"
         android:title="About"
         android:summary="About Settings">
         <!-- key/value pairs can be included as arguments for the fragment. -->
