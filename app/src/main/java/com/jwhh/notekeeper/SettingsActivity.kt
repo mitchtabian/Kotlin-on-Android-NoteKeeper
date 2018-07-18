@@ -21,8 +21,11 @@ class SettingsActivity: PreferenceActivity()
         loadHeadersFromResource(R.xml.preference_headers, target)
     }
 
-    override fun isValidFragment(fragmentName: String?): Boolean {
-        return true
+	override fun isValidFragment(fragmentName: String?): Boolean {
+        if(TabletSettingsFragment::class.java.name.equals(fragmentName)){
+            return true
+        }
+        return false
     }
     
     class TabletSettingsFragment : PreferenceFragment()
