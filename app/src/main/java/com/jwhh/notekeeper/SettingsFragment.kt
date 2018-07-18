@@ -40,6 +40,23 @@ class SettingsFragment: PreferenceFragment(),
 
         return true
     }
+	
+	fun updatePreferenceSuccess(key: String?){
+
+        // If this was a real application we would send the updates to server here
+        uploadPreferencesToServer()
+
+        printToLog("successfully updated preferences. key: " + key)
+
+    }
+
+    private fun uploadPreferencesToServer(){
+        // Code for uploading updated preferences to server
+    }
+	
+	private fun printToLog(message: String?){
+        Log.d(TAG, message)
+    }
 }
 
 
