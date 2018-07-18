@@ -9,13 +9,11 @@
     <header
         android:title="Sync"
         android:summary="Sync Settings">
-        <!-- key/value pairs can be included as arguments for the fragment. -->
     </header>
 
     <header
         android:title="About"
         android:summary="About Settings">
-        <!-- key/value pairs can be included as arguments for the fragment. -->
     </header>
 
 </preference-headers>
