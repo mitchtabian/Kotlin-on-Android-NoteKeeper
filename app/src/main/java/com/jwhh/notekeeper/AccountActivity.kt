@@ -15,7 +15,8 @@ import java.util.*
 
 
 class AccountActivity : AppCompatActivity(),
-        View.OnClickListener
+        View.OnClickListener,
+        SharedPreferences.OnSharedPreferenceChangeListener
 {
 
     val TAG = "AccountActivity"
@@ -97,6 +98,7 @@ class AccountActivity : AppCompatActivity(),
         // Gender
         printToLog("saving gender: " + gender_spinner.selectedItem.toString())
         editor.putString(PREFERENCES_GENDER, gender_spinner.selectedItem.toString())
+        editor.apply()
     }
 
 
@@ -108,6 +110,16 @@ class AccountActivity : AppCompatActivity(),
             R.id.save -> savePreferences()
         }
 
+    }
+
+    override fun onSharedPreferenceChanged(p0: SharedPreferences?, key: String?) {
+        when(key){
+            PREFERENCES_NAME -> printToLog("Change detected to SharedPreferences.")
+            PREFERENCES_USERNAME -> printToLog("Change detected to SharedPreferences.")
+            PREFERENCES_PHONE_NUMBER -> printToLog("Change detected to SharedPreferences.")
+            PREFERENCES_EMAIL -> printToLog("Change detected to SharedPreferences.")
+            PREFERENCES_GENDER -> printToLog("Change detected to SharedPreferences.")
+        }
     }
 
     fun View.hideKeyboard() {
