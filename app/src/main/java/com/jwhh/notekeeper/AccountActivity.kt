@@ -1,11 +1,14 @@
 package com.jwhh.notekeeper
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.*
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.telephony.PhoneNumberFormattingTextWatcher
+import android.util.Log
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import kotlinx.android.synthetic.main.activity_account.*
 import kotlinx.android.synthetic.main.layout_account_toolbar.*
 import java.util.*
@@ -14,6 +17,8 @@ import java.util.*
 class AccountActivity : AppCompatActivity(),
         View.OnClickListener
 {
+
+    val TAG = "AccountActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,14 +51,30 @@ class AccountActivity : AppCompatActivity(),
             }
         }
     }
-    
+
+    fun savePreferences(){
+
+    }
+
+
     override fun onClick(widget: View?) {
         when(widget?.id){
 
             R.id.close -> finish()
 
+            
         }
 
+    }
+
+    fun View.hideKeyboard() {
+        printToLog("closing keyboard")
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(windowToken, 0)
+    }
+
+    private fun printToLog(message: String?){
+        Log.d(TAG, message)
     }
 
     private fun initToolbar() {
