@@ -4,6 +4,7 @@
     <header
         android:title="Notifications"
         android:summary="Notification Settings">
+		<!-- key/value pairs can be included as arguments for the fragment. -->
         <extra android:name="settings" android:value="Notifications" />
     </header>
 
