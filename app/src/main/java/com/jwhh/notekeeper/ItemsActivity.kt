@@ -22,6 +22,8 @@ class ItemsActivity : AppCompatActivity(),
 
     private val TAG = "ItemsActivity"
 
+    var settingsFragment: SettingsFragment? = null
+
     val noteLayoutManager by lazy {
         LinearLayoutManager(this)
     }
@@ -96,11 +98,22 @@ class ItemsActivity : AppCompatActivity(),
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-
+                inflateSettingsFragment()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    fun inflateSettingsFragment(){
+        printToLog("Inflating Settings Fragment")
+        if(settingsFragment == null){
+            settingsFragment = SettingsFragment()
+        }
+        val transaction: FragmentTransaction = fragmentManager.beginTransaction()
+        transaction.replace(R.id.settings_container, settingsFragment, FRAGMENT_SETTINGS)
+        transaction.addToBackStack(FRAGMENT_SETTINGS)
+        transaction.commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
