@@ -98,7 +98,7 @@ class ItemsActivity : AppCompatActivity(),
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> {
-                inflateSettingsFragment()
+                
                 true
             }
             else -> super.onOptionsItemSelected(item)
