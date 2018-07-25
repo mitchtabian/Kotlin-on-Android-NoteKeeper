@@ -67,10 +67,10 @@ class AccountActivity : AppCompatActivity(),
 
     }
 
-    fun View.hideKeyboard() {
+    fun hideKeyboard() {
         printToLog("closing keyboard")
-        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(windowToken, 0)
+        val imm = this.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus.rootView.windowToken, 0)
     }
 
     private fun printToLog(message: String?){
