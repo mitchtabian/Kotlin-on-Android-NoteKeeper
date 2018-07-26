@@ -1,12 +1,9 @@
 package com.jwhh.notekeeper
 
-import android.app.FragmentTransaction
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.preference.Preference
 import android.preference.PreferenceActivity
 import android.preference.PreferenceFragment
-import android.provider.Settings
+import android.util.Log
 
 class SettingsActivity: PreferenceActivity()
 {
