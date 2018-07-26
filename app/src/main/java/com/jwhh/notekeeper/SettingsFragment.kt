@@ -8,11 +8,14 @@ import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.util.Log
 
 class SettingsFragment: PreferenceFragment(),
         Preference.OnPreferenceClickListener
 {
 
+	val TAG = "SettingsFragment"
+	
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
