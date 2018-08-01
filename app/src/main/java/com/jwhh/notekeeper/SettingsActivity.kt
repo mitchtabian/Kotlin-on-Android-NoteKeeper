@@ -17,6 +17,13 @@ class SettingsActivity: PreferenceActivity()
 //        addPreferencesFromResource(R.xml.pref_main)
     }
 
+	override fun isValidFragment(fragmentName: String?): Boolean {
+        if(TabletSettingsFragment::class.java.name.equals(fragmentName)){
+            return true
+        }
+        return false
+    }
+	
     override fun onBuildHeaders(target: MutableList<Header>?) {
         loadHeadersFromResource(R.xml.preference_headers, target)
     }
